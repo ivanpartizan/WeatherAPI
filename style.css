@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  min-height: 100vh; /* You must set a specified height */
+  background-image: url("https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1162&q=80"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: center; /* Center the image */
+  background-size: cover;
+  isolation: isolate;
+  display: flex;
+}
+
+.intro {
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #2567a7;
+  mix-blend-mode: multiply;
+}
+
+code {
+  display: block;
+  width: max-content;
+  background: #fff;
+  color: #2567a7;
+  padding: 10px;
+  margin: 2%;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.intro h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  margin: 2%;
+}
+
+h1,
+h2,
+h3 {
+  color: #fff;
+}
+
+.errorMessage {
+  text-align: center;
+}
+
+.cityCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.cityCard h1 {
+  text-align: center;
+}
+
+.conditions {
+  display: flex;
+}
+
+.today,
+.tomorrow,
+.dayAfterTomorrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data {
+  display: flex;
+  justify-content: space-around;
+}
+
+.group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cityInput {
+  outline: none;
+  border: none;
+  background: white;
+  padding: 10px;
+  margin: 2%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2567a7;
+  text-align: left;
+  width: 50%;
+}
+
+.cityInput::placeholder {
+  color: #2567a7;
+  text-align: left;
+}
+
+.output {
+  width: 67%;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  padding: 1%;
+  width: 80%;
+  height: 80%;
+  background: #030815;
+  color: #fff;
+  transition: all 2s;
+  opacity: 0;
+}
+
+.card:hover {
+  background: rgba(3, 8, 21, 0.8);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+  .intro {
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    padding: 2%;
+  }
+  code {
+    font-size: 20px;
+    margin: 1%;
+  }
+  .intro h1 {
+    margin: 1%;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .cityInput {
+    margin: 1%;
+  }
+  .output {
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 80%;
+  }
+  .card {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5%;
+    padding: 5%;
+  }
+  .cityInput {
+    font-size: 12px;
+  }
+  .data,
+  .group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+  h2 {
+    font-size: 1.25em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+}
